@@ -20,7 +20,7 @@ Users should be able to:
 
 ## Live Preview
 
-Visit the live preview [here](https://quizzical-app-ruby.vercel.app/) to explore my awesome Quizzical App.
+Visit the live preview [here](https://quizzical-app-blond.vercel.app/) to explore my awesome Quizzical App.
 
 ## Contact
 
