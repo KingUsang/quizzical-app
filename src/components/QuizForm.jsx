@@ -1,11 +1,16 @@
-import { useState, useEffect, memo } from "react"
+import { useState, useEffect } from "react"
 import Question from "./Question"
 import Button from "./Button"
-
+unecces
 function QuizForm({ questions, onRestartQuiz }) {      
   const [userAnswers, setUserAnswers] = useState({})
   const [isSubmitted, setIsSubmitted] = useState(false)
-
+  
+  useEffect(() => {
+    setUserAnswers({})
+    setIsSubmitted(false)
+  }, [questions])
+  
   const handleSubmit = (e) => {
     e.preventDefault()
     setIsSubmitted(true)
@@ -27,7 +32,7 @@ function QuizForm({ questions, onRestartQuiz }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="animate-fade-in transition" onSubmit={handleSubmit}>
       <div className="divide-y divide-slate-200">
         {questions.map((questionObj, index) => (
           <Question

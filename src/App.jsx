@@ -36,10 +36,9 @@ export default function App() {
         {errorMsg && (
           <ErrorModal message={errorMsg} onClose={() => setErrorMsg(null)} />
         )}
-        {isLoading ? (
-          <Loading />
-        ) : questions.length ? (
-          <QuizForm questions={questions} onRestartQuiz={fetchQuestions} />
+        {isLoading && <Loading />}  
+        {questions.length ? (
+          <QuizForm questions={questions} onRestartQuiz={() => fetchQuestions()} />
         ) : (
           <Welcome onStartQuiz={fetchQuestions} />
         )}

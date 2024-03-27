@@ -27,7 +27,7 @@ export default function Question({ questionObj, isSubmitted, userAnswer, onSelec
             style={optionStyle(option)}>
             <input
               className="appearance-none"
-              type="radio"
+              type="radio" 
               name={question}
               value={option}
               onChange={(e) => onSelectAnswer(question, e.target.value)}
