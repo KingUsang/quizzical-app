@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react"
+import { useState, useLayoutEffect } from "react"
 import Question from "./Question"
 import Button from "./Button"
-unecces
+
 function QuizForm({ questions, onRestartQuiz }) {      
   const [userAnswers, setUserAnswers] = useState({})
   const [isSubmitted, setIsSubmitted] = useState(false)
   
-  useEffect(() => {
+  useLayoutEffect(() => {
     setUserAnswers({})
     setIsSubmitted(false)
+    window.scrollTo(0,0)
   }, [questions])
   
   const handleSubmit = (e) => {
@@ -32,7 +33,7 @@ function QuizForm({ questions, onRestartQuiz }) {
   }
 
   return (
-    <form className="animate-fade-in transition" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div className="divide-y divide-slate-200">
         {questions.map((questionObj, index) => (
           <Question
